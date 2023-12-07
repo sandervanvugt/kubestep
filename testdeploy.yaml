@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: testdeploy
+  name: testdeploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testdeploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: testdeploy
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+        volumeMounts:
+        - name: testvolume
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: testvolume
+        configMap:
+          name: testcm
+status: {}
