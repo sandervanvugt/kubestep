@@ -26,7 +26,6 @@ fi
 
 # check that the index.html file is mounted on the deployment pod index.html location
 PODNAME=$(kubectl get pods -l app=lab7 --no-headers -o custom-columns=":metadata.name")
-echo $PODNAME
 
 if kubectl exec $PODNAME --  grep lab7 /usr/share/nginx/html/index.html >/dev/null
 then 
