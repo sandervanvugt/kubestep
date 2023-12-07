@@ -25,19 +25,16 @@ else
 fi
 
 # check if there is host name resolving to salesweb.example.com
-# this fails and I don't know why
-echo -e "\033[33m[NOTICE]\[033[0m This test can take up to 30 seconds to complete. Please be patient"
-echo
-if ping -c 1 salesweb.example.com 2>&1 /dev/null
+if nslookup salesweb.example.com &> /dev/null
 then
-        echo -e "\033[32m[OK]\033[0m I can ping salesweb.example.com."
+        echo -e "\033[32m[OK]\033[0m I can find salesweb.example.com."
 else
-        echo -e "\033[31m[FAIL]\033[0m I cannot ping the hostname salesweb.example.com. It should resolve to the minikube IP address. Did you use \033[1mminikube ip\033[0m to find the minikube IP address and add a line to your local Linux /etc/hosts file that resolves salesweb.example.com to that IP address? It should look like \033[1m192.168.49.2  salesweb.example.com\033[0m" 
+        echo -e "\033[31m[FAIL]\033[0m I cannot resolve the hostname salesweb.example.com. It should resolve to the minikube IP address. Did you use \033[1mminikube ip\033[0m to find the minikube IP address and add a line to your local Linux /etc/hosts file that resolves salesweb.example.com to that IP address? It should look like \033[1m192.168.49.2  salesweb.example.com\033[0m" 
 fi
 
 # check if curl salesweb.example.com is giving a result
 # this fails and I don't know why
-if curl -s salesweb.example.com | grep -i 'welcome' 2>&1 /dev/null
+if curl -s salesweb.example.com | grep -i 'welcome' &> /dev/null
 then
         echo -e "\033[32m[OK]\033[0m Succesfully contacted the name based virtual host provided by Ingress"
 else
