@@ -34,6 +34,6 @@ else
 	echo -e "\033[31m[FAIL]\033[0m\t\t I cannot find the text \"Welcome to lab7\" in the index.html file from the ConfigMap. Did you mount the ConfigMap in the Deployment? There is no easy way to do this from the command line, but you can check the file \033[1mtestdeploy.yaml\033[0m in the course git repository and tweak it to mount your configmap to create it. If you have earlier succesfully created the Deployment, you might want to run \033[1mkubectl delete deploy lab7\033[0m to delete the old Deployment and use \033[1mkubectl apply lab7.yaml\033[0m to create the new deployment." && exit 4
 fi
 
-
+echo
 echo -e "\033[32m[CONGRATS]\033[0m\t you have succesfully completed this lab, please move on to the next lesson"
 echo
