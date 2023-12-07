@@ -25,19 +25,19 @@ else
 fi
 
 # verify that a pod with the name lab6 is running
-if kubectl get pods | grep lab6 >/dev/null
+if kubectl get pods | grep lab6-pod >/dev/null
 then 
-	echo -e "\033[32m[OK]\033[0m\t\t Pod lab6 is running"
+	echo -e "\033[32m[OK]\033[0m\t\t Pod lab6-pod is running"
 else 
-	echo -e "\033[31m[FAIL]\033[0m\t\t I cannot find a Pod with the name lab6. There is no easy command to create a Pod that connects to specific storage. Have a look at the example file \033[1mpv-pvc-pod.yaml\033[0m in the course Git repository for an example and create your own lab6-pod.yaml based on this. Don't forget to tweak it, and include a default command like sleep 3600. Next use  \033[1mkubectl apply -f lab6-pod.yaml\033[0m to create it." && exit 4
+	echo -e "\033[31m[FAIL]\033[0m\t\t I cannot find a Pod with the name lab6-pod. There is no easy command to create a Pod that connects to specific storage. Have a look at the example file \033[1mpv-pvc-pod.yaml\033[0m in the course Git repository for an example and create your own lab6-pod.yaml based on this. Don't forget to tweak it, and include a default command like sleep 3600. Next use  \033[1mkubectl apply -f lab6-pod.yaml\033[0m to create it." && exit 4
 fi
 
 # verify that a file with the name lab6file can be written to "storagelab" in the directory /data
-if kubectl exec lab6 -- touch /data/lab6file >/dev/null
+if kubectl exec lab6-pod -- touch /data/lab6file >/dev/null
 then 
 	echo -e "\033[32m[OK]\033[0m\t\t I can write a testfile to the /data directory in the Pod. So all is looking good!"
 else 
-	echo -e "\033[31m[FAIL]\033[0m\t\t I cannot create a testfile in the directory /data in the Pod. Can you please verify that mount path using \033[1mkubectl describe pod lab6\033[0m" && exit 4
+	echo -e "\033[31m[FAIL]\033[0m\t\t I cannot create a testfile in the directory /data in the Pod. Can you please verify that mount path using \033[1mkubectl describe pod lab6-pod\033[0m" && exit 4
 fi
 
 # use minikube ssh ls /PATH/labfile to verify the file has been written
