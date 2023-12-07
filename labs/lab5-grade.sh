@@ -43,5 +43,6 @@ fi
 
 
 # succesfull completion
+echo
 echo -e "\033[32m[CONGRATS]\033[0m\t you have succesfully completed this lab, please move on to the next lesson"
 echo
