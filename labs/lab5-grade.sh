@@ -38,7 +38,7 @@ if curl -s salesweb.example.com | grep -i 'welcome' &> /dev/null
 then
         echo -e "\033[32m[OK]\033[0m\t\t Succesfully contacted the name based virtual host provided by Ingress"
 else
-	echo -e "\033[31m[FAIL]\033[0m\t\t The kubernetes ingress resource isn't doing it's work \(yet\). Give it a few seconds and then try again. If it still doesn't work, check if you used \033[1mkubectl create ingress salesweb --rule=\"salesweb.example.com/=salesweb:80\"\033[0m to create it?" && exit 4
+	echo -e "\033[31m[FAIL]\033[0m\t\t The kubernetes ingress resource isn't doing it's work (yet). Give it a few seconds and then try again. If it still doesn't work, check if you used \033[1mkubectl create ingress salesweb --rule=\"salesweb.example.com/=salesweb:80\"\033[0m to create it?" && exit 4
 fi
 
 
