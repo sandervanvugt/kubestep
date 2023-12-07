@@ -27,7 +27,7 @@ fi
 # check that the index.html file is mounted on the deployment pod index.html location
 PODNAME=$(kubectl get pods -l app=lab7 --no-headers -o custom-columns=":metadata.name")
 
-if kubectl exec $PODNAME --  grep lab7 /usr/share/nginx/html/index.html >/dev/null
+if kubectl exec $PODNAME --  grep lab7 /usr/share/nginx/html/index.html &>/dev/null
 then 
 	echo -e "\033[32m[OK]\033[0m\t\t Found the Pod $PODNAME with an index.html that contains the text \"Welcome to lab7\" "
 else 
