@@ -29,7 +29,7 @@ if kubectl get pods | grep lab6 >/dev/null
 then 
 	echo -e "\033[32m[OK]\033[0m\t\t Pod lab6 is running"
 else 
-	echo -e "\033[31m[FAIL]\033[0m\t\t I cannot find a Pod with the name lab6. There is no easy command to create a Pod that connects to specific storage. Have a look at the example file \033[1mpv-pvc-pod.yaml\033[0m in the course Git repository for an example and create your own lab6-pod.yaml based on this. Don't forget to tweak it, and include a default command like sleep 3600. Next use  \033[1mkubectl apply -f lab6-pod.yaml\033[0m to create it it?" && exit 4
+	echo -e "\033[31m[FAIL]\033[0m\t\t I cannot find a Pod with the name lab6. There is no easy command to create a Pod that connects to specific storage. Have a look at the example file \033[1mpv-pvc-pod.yaml\033[0m in the course Git repository for an example and create your own lab6-pod.yaml based on this. Don't forget to tweak it, and include a default command like sleep 3600. Next use  \033[1mkubectl apply -f lab6-pod.yaml\033[0m to create it." && exit 4
 fi
 
 # verify that a file with the name lab6file can be written to "storagelab" in the directory /data
