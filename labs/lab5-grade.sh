@@ -30,6 +30,7 @@ then
         echo -e "\033[32m[OK]\033[0m\t\t I can find salesweb.example.com."
 else
         echo -e "\033[31m[FAIL]\033[0m\t\t I cannot resolve the hostname salesweb.example.com. It should resolve to the minikube IP address. Did you use \033[1mminikube ip\033[0m to find the minikube IP address and add a line to your local Linux /etc/hosts file that resolves salesweb.example.com to that IP address? It should look like \033[1m192.168.49.2  salesweb.example.com\033[0m" 
+	exit 6
 fi
 
 # check if curl salesweb.example.com is giving a result
