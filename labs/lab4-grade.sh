@@ -4,7 +4,7 @@ FINDOUT=$(find ~ -name "newdb.yaml" )
 
 if ! [ -z $FINDOUT ]
 then 
-	echo -e "\033[32m[OK]\033[0m\t\t I have found the YAML file \033[1mnewdb.yaml\033[0m. I'm not smart enough to guarantee that is works though"
+	echo -e "\033[32m[OK]\033[0m\t\t I have found the YAML file \033[1mnewdb.yaml\033[0m. I'm not smart enough to guarantee that is works though, but we'll ffind out later"
 else 
 	echo -e "\033[31m[FAIL]\033[0m\t\t I cannot find \033[1mnewdb.yaml\033[0m anywhere in your home directory. Did you use \033[1mkubectl create deploy newdb --image=newdb --replicas==2 --dry-run=client -o yaml > newdb.yaml\033[0m to generate it?" && exit 3
 fi
@@ -29,7 +29,7 @@ then
 else
 	if [ -f /tmp/lab4check1 ]
 	then
-		echo see this if /tmp/lab4check1 does not exist. we get here because the ENTIRE if condition is NOT true
+		#echo see this if /tmp/lab4check1 does not exist. we get here because the ENTIRE if condition is NOT true
 		echo -e "\033[32m[OK]\033[0m\t\t I have found no errors in the deployment \033[1mnewdb\033[0m."
 		echo
 		echo -e "\033[32m[CONGRATS]\033[0m\t\t you have succesfully completed this lab, please move on to the next lesson"
