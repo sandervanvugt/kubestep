@@ -38,7 +38,7 @@ else
 fi
 
 # check for existence of configmap "wp-db-host"
-if kubectl get cm $(kubectl get cm | awk '/wp-db/ { print $1 }') -o yaml | grep 'hostname: wordpress-mysql' >/dev/null
+if kubectl get cm $(kubectl get cm | awk '/wp-db/ { print $1 }') -o yaml | grep 'hostname: backend' >/dev/null
 then 
 	echo -e "\033[32m[OK]\033[0m ConfigMap wp-db-host was found and it contains the expected value"
 else 
