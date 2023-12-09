@@ -32,7 +32,7 @@ else
 		#echo see this if /tmp/lab4check1 does not exist. we get here because the ENTIRE if condition is NOT true
 		echo -e "\033[32m[OK]\033[0m\t\t I have found no errors in the deployment \033[1mnewdb\033[0m."
 		echo
-		echo -e "\033[32m[CONGRATS]\033[0m\t\t you have successfully completed this lab, please move on to the next lesson"
+		echo -e "\033[32m[CONGRATS]\033[0m\t\t you have succesfully completed this lab, please move on to the next lesson"
 		exit
 	fi
 fi
@@ -52,7 +52,7 @@ else
 		echo see this if /tmp/lab4check1 DOES exist
         	echo -e "\033[32m[OK]\033[0m\t\t I have found no errors in the deployment \033[1mnewdb\033[0m."
 		echo
-		echo -e "\033[32m[CONGRATS]\033\t[0m you have successfully completed this lab, please move on to the next lesson"
+		echo -e "\033[32m[CONGRATS]\033\t[0m you have succesfully completed this lab, please move on to the next lesson"
 		rm /tmp/lab4check2
 		exit
 	fi
@@ -66,5 +66,5 @@ then
 fi
 
 ## congratulations!
-echo -e "\033[32m[CONGRATS]\033[0m\t you have successfully completed this lab, please move on to the next lesson"
+echo -e "\033[32m[CONGRATS]\033[0m\t you have succesfully completed this lab, please move on to the next lesson"
 echo

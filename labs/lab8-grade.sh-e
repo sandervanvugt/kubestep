@@ -46,5 +46,5 @@ else
 fi
 
 echo
-echo -e "\033[32m[CONGRATS]\033[0m you have successfully completed this lab, congratulations on completing this course"
+echo -e "\033[32m[CONGRATS]\033[0m you have succesfully completed this lab, congratulations on completing this course"
 echo
